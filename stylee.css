@@ -1,0 +1,58 @@
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+    
+<script>
+    function formatRupiah(angka) {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR'
+        }).format(angka);
+    }
+
+    function hitungTotal() {
+        const harga = parseInt(document.getElementById('harga').value) || 0;
+        const jumlah = parseInt(document.getElementById('jumlah').value) || 0;
+        const total = harga * jumlah;
+
+        document.getElementById('total').value = total > 0 ? formatRupiah(total) : '';
+    }
+</script>
+
+</head>
+<body>

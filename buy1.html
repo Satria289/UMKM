@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Keren - Kontak</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  
+<div class="container">
+    <h2>Form Pembelian Barang</h2>
+    <form action="#" method="post">
+        <label for="nama">Nama Pembeli</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="barang">Nama Barang</label>
+        <select id="barang" name="barang" required>
+            <option value="">-- Pilih Minuman --</option>
+            <option value="Ice chocolate">Ice chocolate float</option>
+            <option value="Melon float">Melon float</option>
+         </select>
+
+        <label for="harga">Harga Satuan (Rp 25000)</label>
+        <input type="number" id="harga" name="harga" min="25000" required oninput="hitungTotal()">
+
+        <label for="jumlah">Jumlah</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" required oninput="hitungTotal()">
+
+        <label for="total">Total Harga (Rp)</label>
+        <input type="number" id="total" name="total" readonly>
+
+        <label for="pembayaran">Metode Pembayaran</label>
+        <select id="pembayaran" name="pembayaran" required>
+            <option value="">-- Pilih Metode --</option>
+            <option value="tunai">Tunai</option>
+            <option value="transfer">Transfer</option>
+            <option value="ewallet">E-Wallet</option>
+        </select>
+
+        <label for="alamat">Alamat Pengiriman</label>
+        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+        <nav>
+        <button type="pesanan.html"><li><a href="pesanan.html">Beli sekarang</a></button></li>
+        </nav>
+    </form>
+</div>
+
+<script>
+    function hitungTotal() {
+        const harga = document.getElementById('harga').value;
+        const jumlah = document.getElementById('jumlah').value;
+        const total = harga * jumlah;
+        document.getElementById('total').value = total ? total : '';
+    }
+</script>
+
+</body>
+</html>
